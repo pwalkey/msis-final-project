@@ -42,12 +42,25 @@
   <div class="row">
     <div class="col-sm" id="out">
       <h3>  Remove Member </h3>
+      <form>
+      <div class="form-group">
+        <label for="newmemberName">Member Name</label>
+        <select class="form-control" v-model="newmemberForm.Name" id="newmemberName">
+          <option value="name1">Harris, John</option>
+          <option value="name2">Reign, Carla</option>
+          <option value="name3">Nicks, Stevie</option>
+          <option value="name4">Greenburg, Gerald</option>
+          <option value="name5">Hernandez, Pacho</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-secondary">Remove Member</button>
+      </form>
     </div>
-    <div class="col-lg" id="middle">
+    <div class="col-xl-" id="middle">
       <h1>Oconeee County Fire Rescue</h1>
       <br>
-      <table class="sortable-theme-dark" data-sortable>
-          <thead>
+      <table>
+          <thead class = "thead-dark" >
           <tr>
           <th scope="col">ID</th>
           <th scope="col">LastName</th>
@@ -60,75 +73,71 @@
           <tbody>
           <tr role="row">
             <th scope="row" role="rowheader">1</th>
-              <td role="gridcell">Steve's Wild Ride</td>
-              <td role="gridcell">Harper Lee</td>
-              <td role="gridcell">1960</td>
-              <td role="gridcell">350</td>
-              <td role="gridcell">$17.99</td>
+              <td role="gridcell">Harris</td>
+              <td role="gridcell">John</td>
+              <td role="gridcell">12</td>
+              <td role="gridcell">3</td>
+              <td role="gridcell">Chief</td>
           </tr>
           <tr role="row">
             <th scope="row" role="rowheader">2</th>
-              <td role="gridcell">Destiny</td>
-              <td role="gridcell">Jacob Thornton</td>
-              <td role="gridcell">1987</td>
-              <td role="gridcell">400</td>
-              <td role="gridcell">$19.54</td>
+              <td role="gridcell">Reign</td>
+              <td role="gridcell">Carla</td>
+              <td role="gridcell">11</td>
+              <td role="gridcell">2</td>
+              <td role="gridcell">Leiutenant</td>
           </tr>
           <tr role="row">
             <th scope="row" role="rowheader">3</th>
-              <td role="gridcell">O fortuna</td>
-              <td role="gridcell">Larry Bird</td>
-              <td role="gridcell">1920</td>
-              <td role="gridcell">210</td>
-              <td role="gridcell">$23.14</td>
+              <td role="gridcell">Nicks</td>
+              <td role="gridcell">Stevie</td>
+              <td role="gridcell">5</td>
+              <td role="gridcell">4</td>
+              <td role="gridcell">Deputy Chief</td>
           </tr>
           <tr role="row">
             <th scope="row" role="rowheader">4</th>
-              <td role="gridcell">Paddling canoes</td>
-              <td role="gridcell">Ron Swanson</td>
-              <td role="gridcell">2003</td>
-              <td role="gridcell">170</td>
-              <td role="gridcell">$17.38</td>
+              <td role="gridcell">Greenburg</td>
+              <td role="gridcell">Gerald</td>
+              <td role="gridcell">2</td>
+              <td role="gridcell">5</td>
+              <td role="gridcell">Private</td>
           </tr>
           <tr role="row">
             <th scope="row" role="rowheader">5</th>
-              <td role="gridcell">Corn</td>
-              <td role="gridcell">Terry Lewis</td>
-              <td role="gridcell">2020</td>
-              <td role="gridcell">240</td>
-              <td role="gridcell">$13.00</td>
+              <td role="gridcell">Hernandez</td>
+              <td role="gridcell">Pacho</td>
+              <td role="gridcell">9</td>
+              <td role="gridcell">1</td>
+              <td role="gridcell">Chief of Fire</td>
           </tr>
         </div>
         </table>
+        <form>
+        <button type="submit" class="btn btn-secondary">Edit Member</button>
+      </form>
     </div>
     <div class="col-sm" id="out">
-    <h3>  Add Member </h3>
-    <form>
-  <div class="row">
-    <div class="col">
-      <input type="text" class="form-control" placeholder="First name">
-    </div>
-    <div class="col">
-      <input type="text" class="form-control" placeholder="Last name">
-    </div>
-  </div>
-  <br>
-  <div class="form-group">
-   <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Radio Number">
- </div>
- <div class="form-group">
-   <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Station Number">
- </div>
- <div class="form-group">
-   <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Position">
- </div>
-</form>
-<form>
-<button type="button" class="btn btn-primary">Add Member</button>
-</form>
-    </div>
-  </div>
-</div>
+    <div class="container-fluid">
+      <div class="row" id="triagePage">
+        <div id="cardPaneRight" class="col cardPane cardPaneRight">
+          <form method="post" v-on:submit.prevent="handleNewPtForm">
+            <h3>  Add Member </h3>
+
+            <div class="form-group">
+            <label for="newmemberFirstName">First Name</label>
+            <input type="text" v-model="newmemberForm.firstName" class="form-control" id="newmemberFirstName" placeholder="Jane">
+          </div>
+          <div class="form-group">
+            <label for="newmemberLastName">Last Name</label>
+            <input type="text" v-model="newmemberForm.lastName" class="form-control" id="newmemberLastName" placeholder="Doe">
+          </div>
+          <div class="form-group">
+            <label for="newmemberDob">DOB</label>
+            <input type="text" v-model="newmemberForm.dob" class="form-control" id="newmemberDob" placeholder="2020-01-02">
+          </div>
+          <button type="submit" class="btn btn-primary">Add Member</button>
+          </form>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
