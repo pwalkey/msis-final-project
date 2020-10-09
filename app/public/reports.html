@@ -21,7 +21,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="index.html">Home</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="members.html">Members</a>
@@ -30,7 +30,7 @@
         <a class="nav-link" href="certifications.html">Certifications</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="reports.html">Reports</a>
+        <a class="nav-link" href="reports.html">Reports<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="login.html">Login</a>
@@ -38,21 +38,105 @@
   </div>
 </nav>
   </header>
+  <h1 class="open">OCFR Reports</h1>
+  <br>
   <div class="container">
-  <div class="row">
-    <div class="col-sm" id="out">
-      One of three columns
-    </div>
-    <div class="col-med" id="middle">
-      <h1>Oconeee County Fire Rescue</h1>
-      <br>
-      <p>This is my website that was designed to help me learn coding and GitHub!</p>
-    </div>
-    <div class="col-sm" id="out">
-      One of three columns
-    </div>
-  </div>
+    <div class="row">
+      <div class="col">
+        <h4> Expired Certifications</h4>
+      <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Cerification</th>
+      <th scope="col">Exp. Date</th>
+      <th scope="col">Priority</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Harris, John</td>
+      <td>CPR (American Heart Association)</td>
+      <td>10/7/2020</td>
+      <td>Low</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Nicks, Stevie</td>
+      <td>POST (Georgia POST Academy)</td>
+      <td>05/21/2020</td>
+      <td>Medium</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Reign, Carla</td>
+      <td>Firefighter I (Athens Technical College)</td>
+      <td>02/15/2019</td>
+      <td>High</td>
+    </tr>
+  </tbody>
+</table>
 </div>
+      <div class="col">
+        <h4>Member Information</h4>
+        <table class = "table">
+            <thead>
+            <tr>
+            <th scope="col">ID</th>
+            <th scope="col">LastName</th>
+            <th scope="col">FirstName</th>
+            <th scope="col">Radio #</th>
+            <th scope="col">Station #</th>
+            <th scope="col">Email</th>
+          </tr>
+          </thead>
+            <tbody>
+            <tr role="row">
+              <th scope="row" role="rowheader">1</th>
+                <td role="gridcell">Harris</td>
+                <td role="gridcell">John</td>
+                <td role="gridcell">12</td>
+                <td role="gridcell">3</td>
+                <td role="gridcell">harris.john@yahoo.com</td>
+            </tr>
+            <tr role="row">
+              <th scope="row" role="rowheader">2</th>
+                <td role="gridcell">Reign</td>
+                <td role="gridcell">Carla</td>
+                <td role="gridcell">11</td>
+                <td role="gridcell">2</td>
+                <td role="gridcell">recarl@gmail.com</td>
+            </tr>
+            <tr role="row">
+              <th scope="row" role="rowheader">3</th>
+                <td role="gridcell">Nicks</td>
+                <td role="gridcell">Stevie</td>
+                <td role="gridcell">5</td>
+                <td role="gridcell">4</td>
+                <td role="gridcell">nickss@aol.com</td>
+            </tr>
+            <tr role="row">
+              <th scope="row" role="rowheader">4</th>
+                <td role="gridcell">Greenburg</td>
+                <td role="gridcell">Gerald</td>
+                <td role="gridcell">2</td>
+                <td role="gridcell">5</td>
+                <td role="gridcell">greenger@outlook.com</td>
+            </tr>
+            <tr role="row">
+              <th scope="row" role="rowheader">5</th>
+                <td role="gridcell">Hernandez</td>
+                <td role="gridcell">Pacho</td>
+                <td role="gridcell">9</td>
+                <td role="gridcell">1</td>
+                <td role="gridcell">pachofire@cox.net</td>
+            </tr>
+          </div>
+          </table>
+
+      </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
