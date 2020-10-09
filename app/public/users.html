@@ -20,11 +20,11 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
+      <li class="nav-item active">
         <a class="nav-link" href="index.html">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link active" href="members.html">Members<span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="members.html">Members<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="certifications.html">Certifications</a>
@@ -42,24 +42,24 @@
 </nav>
   </header>
   <div class="open">
-  <h1>OCFR Members Page</h1>
+  <h1>OCFR Users Page</h1>
 </div>
   <div class="container">
   <div class="row">
     <div class="col-sm" id="out">
-      <h3>  Remove Member </h3>
+      <h3>  Remove User </h3>
       <form>
       <div class="form-group">
-        <label for="newmemberName">Member Name</label>
-        <select class="form-control" v-model="newmemberForm.Name" id="newmemberName">
-          <option value="name1">Harris, John</option>
-          <option value="name2">Reign, Carla</option>
-          <option value="name3">Nicks, Stevie</option>
-          <option value="name4">Greenburg, Gerald</option>
-          <option value="name5">Hernandez, Pacho</option>
+        <label for="newuserUsername">Username</label>
+        <select class="form-control" v-model="newuserForm.Username" id="newmemberName">
+          <option value="name1">jharris@email.com</option>
+          <option value="name2">creign@yahoo.com</option>
+          <option value="name3">stevie.nicks@gmail.com</option>
+          <option value="name4">ggburg@hotmail.com</option>
+          <option value="name5">pachorules@aol.com</option>
         </select>
       </div>
-      <button type="submit" class="btn btn-secondary">Remove Member</button>
+      <button type="submit" class="btn btn-secondary">Remove User</button>
       </form>
     </div>
     <div class="col-xl-" id="middle">
@@ -68,58 +68,45 @@
           <thead class = "thead-dark" >
           <tr>
           <th scope="col">ID</th>
-          <th scope="col">LastName</th>
-          <th scope="col">FirstName</th>
-          <th scope="col">Radio #</th>
-          <th scope="col">Station #</th>
-          <th scope="col">Position</th>
+          <th scope="col">Username</th>
+          <th scope="col">Password</th>
         </tr>
         </thead>
           <tbody>
           <tr role="row">
             <th scope="row" role="rowheader">1</th>
-              <td role="gridcell">Harris</td>
-              <td role="gridcell">John</td>
-              <td role="gridcell">12</td>
-              <td role="gridcell">3</td>
-              <td role="gridcell">Chief</td>
+              <td role="gridcell">jharris@email.com</td>
+              <td role="gridcell">JohnIsCool</td>
+
           </tr>
           <tr role="row">
             <th scope="row" role="rowheader">2</th>
-              <td role="gridcell">Reign</td>
-              <td role="gridcell">Carla</td>
-              <td role="gridcell">11</td>
-              <td role="gridcell">2</td>
-              <td role="gridcell">Leiutenant</td>
+              <td role="gridcell">creign@yahoo.com</td>
+              <td role="gridcell">FluffyIsMyCatsName</td>
+
           </tr>
           <tr role="row">
             <th scope="row" role="rowheader">3</th>
-              <td role="gridcell">Nicks</td>
-              <td role="gridcell">Stevie</td>
-              <td role="gridcell">5</td>
-              <td role="gridcell">4</td>
-              <td role="gridcell">Deputy Chief</td>
+              <td role="gridcell">stevie.nicks@gmail.com</td>
+              <td role="gridcell">Rhiaaaannon!</td>
+
           </tr>
           <tr role="row">
             <th scope="row" role="rowheader">4</th>
-              <td role="gridcell">Greenburg</td>
-              <td role="gridcell">Gerald</td>
-              <td role="gridcell">2</td>
-              <td role="gridcell">5</td>
-              <td role="gridcell">Private</td>
+              <td role="gridcell">ggburg@hotmail.com</td>
+              <td role="gridcell">12345</td>
+
           </tr>
           <tr role="row">
             <th scope="row" role="rowheader">5</th>
-              <td role="gridcell">Hernandez</td>
-              <td role="gridcell">Pacho</td>
-              <td role="gridcell">9</td>
-              <td role="gridcell">1</td>
-              <td role="gridcell">Chief of Fire</td>
+              <td role="gridcell">pachorules@aol.com</td>
+              <td role="gridcell">p/q2-q4!</td>
+
           </tr>
         </div>
         </table>
         <form>
-        <button type="submit" class="btn btn-secondary">Edit Member</button>
+        <button type="submit" class="btn btn-secondary">Edit User</button>
       </form>
     </div>
     <div class="col-sm" id="out">
@@ -127,21 +114,17 @@
       <div class="row" id="triagePage">
         <div id="cardPaneRight" class="col cardPane cardPaneRight">
           <form method="post" v-on:submit.prevent="handleNewPtForm">
-            <h3>  Add Member </h3>
+            <h3>  Add User </h3>
 
             <div class="form-group">
-            <label for="newmemberFirstName">First Name</label>
-            <input type="text" v-model="newmemberForm.firstName" class="form-control" id="newmemberFirstName" placeholder="Jane">
+            <label for="newuserUsername">Username (Email)</label>
+            <input type="text" v-model="newuserForm.Username" class="form-control" id="newuserUsername" placeholder="example@email.com">
           </div>
           <div class="form-group">
-            <label for="newmemberLastName">Last Name</label>
-            <input type="text" v-model="newmemberForm.lastName" class="form-control" id="newmemberLastName" placeholder="Doe">
+            <label for="newuserPassword">Password</label>
+            <input type="text" v-model="newuserForm.Password" class="form-control" id="newuserPassword" placeholder="********">
           </div>
-          <div class="form-group">
-            <label for="newmemberDob">DOB</label>
-            <input type="text" v-model="newmemberForm.dob" class="form-control" id="newmemberDob" placeholder="2020-01-02">
-          </div>
-          <button type="submit" class="btn btn-primary">Add Member</button>
+          <button type="submit" class="btn btn-secondary">Add User</button>
           </form>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
