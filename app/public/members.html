@@ -41,15 +41,91 @@
   <div class="container">
   <div class="row">
     <div class="col-sm" id="out">
-      One of three columns
+      <h3>  Remove Member </h3>
     </div>
-    <div class="col-med" id="middle">
+    <div class="col-lg" id="middle">
       <h1>Oconeee County Fire Rescue</h1>
       <br>
-      <p>This is my website that was designed to help me learn coding and GitHub!</p>
+      <table class="sortable-theme-dark" data-sortable>
+          <thead>
+          <tr>
+          <th scope="col">ID</th>
+          <th scope="col">LastName</th>
+          <th scope="col">FirstName</th>
+          <th scope="col">Radio #</th>
+          <th scope="col">Station #</th>
+          <th scope="col">Position</th>
+        </tr>
+        </thead>
+          <tbody>
+          <tr role="row">
+            <th scope="row" role="rowheader">1</th>
+              <td role="gridcell">Steve's Wild Ride</td>
+              <td role="gridcell">Harper Lee</td>
+              <td role="gridcell">1960</td>
+              <td role="gridcell">350</td>
+              <td role="gridcell">$17.99</td>
+          </tr>
+          <tr role="row">
+            <th scope="row" role="rowheader">2</th>
+              <td role="gridcell">Destiny</td>
+              <td role="gridcell">Jacob Thornton</td>
+              <td role="gridcell">1987</td>
+              <td role="gridcell">400</td>
+              <td role="gridcell">$19.54</td>
+          </tr>
+          <tr role="row">
+            <th scope="row" role="rowheader">3</th>
+              <td role="gridcell">O fortuna</td>
+              <td role="gridcell">Larry Bird</td>
+              <td role="gridcell">1920</td>
+              <td role="gridcell">210</td>
+              <td role="gridcell">$23.14</td>
+          </tr>
+          <tr role="row">
+            <th scope="row" role="rowheader">4</th>
+              <td role="gridcell">Paddling canoes</td>
+              <td role="gridcell">Ron Swanson</td>
+              <td role="gridcell">2003</td>
+              <td role="gridcell">170</td>
+              <td role="gridcell">$17.38</td>
+          </tr>
+          <tr role="row">
+            <th scope="row" role="rowheader">5</th>
+              <td role="gridcell">Corn</td>
+              <td role="gridcell">Terry Lewis</td>
+              <td role="gridcell">2020</td>
+              <td role="gridcell">240</td>
+              <td role="gridcell">$13.00</td>
+          </tr>
+        </div>
+        </table>
     </div>
     <div class="col-sm" id="out">
-      One of three columns
+    <h3>  Add Member </h3>
+    <form>
+  <div class="row">
+    <div class="col">
+      <input type="text" class="form-control" placeholder="First name">
+    </div>
+    <div class="col">
+      <input type="text" class="form-control" placeholder="Last name">
+    </div>
+  </div>
+  <br>
+  <div class="form-group">
+   <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Radio Number">
+ </div>
+ <div class="form-group">
+   <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Station Number">
+ </div>
+ <div class="form-group">
+   <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Position">
+ </div>
+</form>
+<form>
+<button type="button" class="btn btn-primary">Add Member</button>
+</form>
     </div>
   </div>
 </div>
