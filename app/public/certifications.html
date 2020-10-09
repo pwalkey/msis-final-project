@@ -38,21 +38,100 @@
   </div>
 </nav>
   </header>
+  <div class="open">
+  <h1>OCFR Certifications Page</h1>
+  </div>
   <div class="container">
   <div class="row">
-    <div class="col-sm" id="out">
-      One of three columns
+    <div class="col-sm-auto" id="out">
+      <h3>  Add Certification </h3>
+      <form>
+        <div class="container-fluid">
+          <div class="row" id="triagePage">
+            <div id="cardPaneLeft" class="col cardPane cardPaneRight">
+              <form method="post" v-on:submit.prevent="handleNewPtForm">
+                <h3>  Add Credentials </h3>
+                <div class="form-group">
+                <label for="credentialID">CredentialID</label>
+                <input type="text" v-model="newcredentialForm.credentialID" class="form-control" id="credentialID" placeholder="Credential ID">
+              </div>
+              <div class="form-group">
+                <label for="credentialName">CredentialName</label>
+                <input type="text" v-model="newcredentialForm.credentialName" class="form-control" id="credentialName" placeholder="CredenitialName">
+              </div>
+              <div class="form-group">
+                <label for="memberName">Member Name</label>
+                <input type="text" v-model="newcredentialForm.memberName" class="form-control" id="memberName" placeholder="Member Name">
+              </div>
+              <div class="form-group">
+                <label for="expiration">Expiration</label>
+                <input type="text" v-model="newcredentialForm.expiration" class="form-control" id="expiration" placeholder="Member Name">
+              </div>
+              <button type="submit" class="btn btn-primary">Add Certification</button>
+              </form>
     </div>
-    <div class="col-med" id="middle">
-      <h1>Oconeee County Fire Rescue</h1>
+    <div class="col-xl-auto" id="middle">
       <br>
-      <p>This is my website that was designed to help me learn coding and GitHub!</p>
+      <table>
+          <thead class = "thead-dark" >
+          <tr>
+          <th scope="col">ID</th>
+          <th scope="col">CredentialName</th>
+          <th scope="col">MemberName</th>
+          <th scope="col">Expiration</th>
+        </tr>
+        </thead>
+          <tbody>
+          <tr role="row">
+            <th scope="row" role="rowheader">1</th>
+              <td role="gridcell">CPR (American Heart Association)</td>
+              <td role="gridcell">Harris, John</td>
+              <td role="gridcell">10/29/2023</td>
+          </tr>
+          <tr role="row">
+            <th scope="row" role="rowheader">2</th>
+              <td role="gridcell">Firefighter I (Athens Technical College)</td>
+              <td role="gridcell">Reign, Carla</td>
+              <td role="gridcell">02/15/2026</td>
+          </tr>
+          <tr role="row">
+            <th scope="row" role="rowheader">3</th>
+              <td role="gridcell">POST (Georgia POST Academy)</td>
+              <td role="gridcell">Reign, Carla</td>
+              <td role="gridcell">05/21/2021</td>
+          </tr>
+          <tr role="row">
+            <th scope="row" role="rowheader">4</th>
+              <td role="gridcell">CPR (American Red Cross)</td>
+              <td role="gridcell">Greenburg, Gerald</td>
+              <td role="gridcell">07/11/2022</td>
+          </tr>
+          <tr role="row">
+            <th scope="row" role="rowheader">5</th>
+              <td role="gridcell">Firefighter I (IVY Technical College)</td>
+              <td role="gridcell">Hernandez, Pacho</td>
+              <td role="gridcell">11/01/2023</td>
+          </tr>
+        </div>
+        </table>
+        <form>
+        <button type="submit" class="btn btn-secondary">Edit Member</button>
+      </form>
     </div>
-    <div class="col-sm" id="out">
-      One of three columns
-    </div>
-  </div>
-</div>
+    <div class="col-sm-auto" id="out">
+          <form>
+          <div class="form-group">
+            <label for="newmemberName">Update Credentials</label>
+            <select class="form-control" v-model="newmemberForm.Name" id="newmemberName">
+              <option value="name1">CPR (American Heart Association)</option>
+              <option value="name2">Firefighter I (Athens Technical College)</option>
+              <option value="name3">POST (Georgia POST Academy)</option>
+              <option value="name4">CPR (American Red Cross)</option>
+              <option value="name5">Firefighter I (IVY Technical College)</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-secondary">Update Certification</button>
+          </form>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

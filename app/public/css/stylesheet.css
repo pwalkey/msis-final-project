@@ -12,6 +12,9 @@ body {
   text-align: center;
 }
 table {
-  boder-width: 1px; 
+  boder-width: 1px;
 
+}
+.open {
+  text-align: center;
 }
