@@ -47,13 +47,13 @@
   <div class="container">
   <div class="row">
     <div class="col-sm" id="out">
-      <h3>  Add Certification </h3>
+      <h3> <u>Add Certification</u> </h3>
       <form>
         <div class="container-fluid">
           <div class="row" id="triagePage">
             <div id="cardPaneLeft" class="col cardPane cardPaneRight">
               <form method="post" v-on:submit.prevent="handleNewPtForm">
-                <h3>  Add Credentials </h3>
+                <h3> <u>Add Credentials</u> </h3>
                 <div class="form-group">
                 <label for="credentialID">CredentialID</label>
                 <input type="text" v-model="newcredentialForm.credentialID" class="form-control" id="credentialID" placeholder="Credential ID">
@@ -124,7 +124,7 @@
     <div class="col-sm" id="out">
           <form>
           <div class="form-group">
-            <label for="newmemberName">Update Credentials</label>
+            <label for="newmemberName"><u>Update Credentials</u></label>
             <select class="form-control" v-model="newmemberForm.Name" id="newmemberName">
               <option value="name1">CPR (American Heart Association)</option>
               <option value="name2">Firefighter I (Athens Technical College)</option>
