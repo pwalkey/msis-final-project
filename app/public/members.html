@@ -64,7 +64,7 @@
     </div>
     <div class="col-xl-" id="middle">
       <br>
-      <table class="table">
+      <!-- <table class="table">
           <thead class = "thead-dark" >
           <tr>
           <th scope="col">ID</th>
@@ -117,7 +117,12 @@
               <td role="gridcell">Chief of Fire</td>
           </tr>
         </div>
-        </table>
+        </table> -->
+        <div class="person" v-for="ps in personList">
+          <span class="lastName">{{ ps.LastName }}</span>,
+          <span clas="firstName">{{ ps.FirstName }}</span>
+          <span class="birthDate float-right">{{ ps.DateOfBirth }}</span>
+        </div>
         <form>
         <button type="submit" class="btn btn-secondary"><b>Edit Member</b></button>
       </form>
