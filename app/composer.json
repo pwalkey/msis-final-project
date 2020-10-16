@@ -1,0 +1,14 @@
+{
+    "name": "pwalkey/msis-final-project",
+    "description": "Team 10's ds final project",
+    "license": "private",
+    "authors": [{
+        "name": "Team 10"
+    }],
+    "require": {
+      "ramsey/uuid": "^4.1"
+    },
+    "autoload": {
+        "classmap": ["class/DbConnection.php"]
+    }
+}
