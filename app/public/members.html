@@ -94,25 +94,27 @@
  
     <div class="col-sm" id="out">
     <div class="container-fluid">
+      <div class="row" id="phppage">
         <div id="cardPaneRight" class="col cardPane cardPaneRight">
-          <form method="post" v-on:submit.prevent="handleNewPtForm">
+          <form method="post" v-on:submit.prevent="handleNewMemberForm">
             <h3>  Add Member </h3>
-
+            
             <div class="form-group">
             <label for="newmemberFirstName">First Name</label>
-            <input type="text" v-model="newmemberForm.firstName" class="form-control" id="newmemberFirstName" placeholder="Jane">
+            <input type="text" v-model="newmemberForm.FirstName" class="form-control" id="newmemberFirstName" placeholder="Jane">
           </div>
           <div class="form-group">
             <label for="newmemberLastName">Last Name</label>
-            <input type="text" v-model="newmemberForm.lastName" class="form-control" id="newmemberLastName" placeholder="Doe">
+            <input type="text" v-model="newmemberForm.LastName" class="form-control" id="newmemberLastName" placeholder="Doe">
           </div>
           <div class="form-group">
-            <label for="newmemberDob">DOB</label>
-            <input type="text" v-model="newmemberForm.dob" class="form-control" id="newmemberDob" placeholder="2020-01-02">
+            <label for="newmemberPosition">Position</label>
+            <input type="text" v-model="newmemberForm.Position" class="form-control" id="newmemberPosition" placeholder="Chief">
           </div>
           <button type="submit" class="btn btn-primary"><b>Add Member</b></button>
           </form>
         </div>
+    </div>
     </div>
     </div>
   </div>
