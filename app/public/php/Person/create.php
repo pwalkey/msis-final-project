@@ -8,16 +8,13 @@ $db = DbConnection::getConnection();
 // Step 2: Create & run the query
 // Note the use of parameterized statements to avoid injection
 $stmt = $db->prepare(
-  'INSERT INTO PERSON (PersonID, LastName, FirstName, RadioNumber, StationNumber,Position)
-  VALUES (?, ?, ?, ?, ?,?)'
+  'INSERT INTO PERSON (LastName, FirstName,Position)
+  VALUES (?, ?, ?)'
 );
 
 $stmt->execute([
-  $_POST['PersonID'],
   $_POST['LastName'],
   $_POST['FirstName'],
-  $_POST['RadioNumber'],
-  $_POST['StationNumber'],
   $_POST['Position']
 ]);
 

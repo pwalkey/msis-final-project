@@ -9,11 +9,8 @@ var app = new Vue({
   methods: {
 	newmemberData() {
 		return {
-			PersonID: "",
 			LastName: "",
 			FirstName: "",
-			RadioNumber: "",
-			StationNumber: "",
 			Position: ""
 		}
 	  },
@@ -22,7 +19,7 @@ var app = new Vue({
   
 		// TODO: Validate the data!
   
-		fetch('php/Person/post.php', {
+		fetch('php/Person/create.php', {
 		  method:'POST',
 		  body: JSON.stringify(this.newmemberForm),
 		  headers: {
@@ -33,7 +30,8 @@ var app = new Vue({
 		.then( json => {
 		  console.log("Returned from post:", json);
 		  // TODO: test a result was returned!
-		  this.psList.push(json[0]);
+		//   this.psList.push(json[0]);
+		  this.personList=json;
 		  this.newmemberForm = this.newmemberData();
 		});
   
@@ -49,7 +47,6 @@ var app = new Vue({
 			this.personList = json;
 			console.log(this.personList)
 		});
-		this.newmemberForm = this.newmemberData();
 	}
 })
 

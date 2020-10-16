@@ -44,18 +44,14 @@
   <h1>OCFR Members Page</h1>
 </div>
   <div class="container">
-  <div class="row">
-    <div class="col-sm" id="out">
+  <div class="row" id="phppage">
+    <div class="col-sm-3" >
       <h3>  Remove Member </h3>
       <form>
       <div class="form-group">
         <label for="newmemberName">Member Name</label>
         <select class="form-control" v-model="newmemberForm.Name" id="newmemberName">
-          <option value="name1">{{ ps.LastName }}</option>
-          <option value="name2">Reign, Carla</option>
-          <option value="name3">Nicks, Stevie</option>
-          <option value="name4">Greenburg, Gerald</option>
-          <option value="name5">Hernandez, Pacho</option>
+          <option value='newmemberName' v-for="ps in personList">{{ ps.LastName }}, {{ ps.FirstName }}</option>
         </select>
       </div>
       <button type="submit" class="btn btn-secondary"><b>Remove Member</b></button>
@@ -63,7 +59,7 @@
     </div>
     <div class="col-xl-" id="middle">
       <br>        
-      <div class="row" id="phppage">
+      <div class="row">
       <table class="table">
           <thead class = "thead-dark" >
           <tr>
@@ -83,20 +79,12 @@
               <td role="gridcell">{{ ps.RadioNumber }}</td>
               <td role="gridcell">{{ ps.StationNumber }}</td>
               <td role="gridcell">{{ ps.Position }}</td>
-          
-        </div>
-        </table>
-        <form>
-        <button type="submit" class="btn btn-secondary"><b>Edit Member</b></button>
-      </form>
-    </div>
-    </div>
- 
-    <div class="col-sm" id="out">
-    <div class="container-fluid">
-      <div class="row" id="phppage">
-        <div id="cardPaneRight" class="col cardPane cardPaneRight">
-          <form method="post" v-on:submit.prevent="handleNewMemberForm">
+            </table>
+            <form>
+              <button type="submit" class="btn btn-secondary"><b>Edit Member</b></button>
+            </form></div></div>
+            <div class="container-fluid col-sm" id="out">
+           <form method="post" v-on:submit.prevent="handleNewMemberForm">
             <h3>  Add Member </h3>
             
             <div class="form-group">
@@ -114,10 +102,10 @@
           <button type="submit" class="btn btn-primary"><b>Add Member</b></button>
           </form>
         </div>
+        </div>
+      
     </div>
-    </div>
-    </div>
-  </div>
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
