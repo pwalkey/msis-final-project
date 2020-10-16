@@ -3,7 +3,9 @@ var app = new Vue({
 
   data: {
 	  personList: [],
-	  newmemberForm: {}
+	  certificationList:[],
+	  newmemberForm: {},
+	  newcredentialForm: {}
   },
 
   methods: {
@@ -14,6 +16,13 @@ var app = new Vue({
 			Position: ""
 		}
 	  },
+	newcredentialata(){
+		return {
+			Agency: "",
+			Name: "",
+			ExpirationPeriod: ""
+		}
+	},
 	handleNewMemberForm( evt ) {
 		// evt.preventDefault();  // Redundant w/ Vue's submit.prevent
   
@@ -38,6 +47,28 @@ var app = new Vue({
 		console.log("Creating (POSTing)...!");
 		console.log(this.newmemberForm);
 	  },
+	handleNewCredentialForm( evt ) {
+		// evt.preventDefault();  // Redundant w/ Vue's submit.prevent
+  
+		// TODO: Validate the data!
+  
+		fetch('php/Certification/create.php', {
+		  method:'POST',
+		  body: JSON.stringify(this.newcredentialForm),
+		  headers: {
+			"Content-Type": "application/json; charset=utf-8"
+		  }
+		})
+		.then( response => response.json() )
+		.then( json => {
+		  console.log("Returned from post:", json);
+		  this.certificationList=json;
+		  this.newcredentialForm = this.newcredentialata();
+		});
+  
+		console.log("Creating (POSTing)...!");
+		console.log(this.newcredentialForm);
+	  },
 	},
 	created(){
 		// console.log("6");
@@ -47,6 +78,13 @@ var app = new Vue({
 			this.personList = json;
 			console.log(this.personList)
 		});
-	}
+
+		fetch("php/Certification/")
+		.then(response => response.json())
+		.then( json => {
+			this.certificationList = json;
+			console.log(this.certificationList)
+		});
+	},
 })
 

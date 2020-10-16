@@ -11,8 +11,7 @@
     <title>OCFR</title>
   </head>
   <body>
-    <header>
-      <nav class="navbar navbar-expand-lg navbar-light">
+    <nav class="navbar navbar-expand-lg navbar-light">
   <a class="navbar-brand" href="index.html"><img src="images/logo.png" width="50px"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -40,105 +39,73 @@
       </li>
   </div>
 </nav>
-  </header>
   <div class="open">
   <h1>OCFR Certifications Page</h1>
   </div>
   <div class="container">
-  <div class="row">
-    <div class="col-sm" id="out">
-      <h3> <u>Add Certification</u> </h3>
-      <form>
-        <div class="container-fluid">
-          <div class="row" id="triagePage">
-            <div id="cardPaneLeft" class="col cardPane cardPaneRight">
-              <form method="post" v-on:submit.prevent="handleNewPtForm">
-                <h3> <u>Add Credentials</u> </h3>
-                <div class="form-group">
-                <label for="credentialID">CredentialID</label>
-                <input type="text" v-model="newcredentialForm.credentialID" class="form-control" id="credentialID" placeholder="Credential ID">
-              </div>
-              <div class="form-group">
-                <label for="credentialName">CredentialName</label>
-                <input type="text" v-model="newcredentialForm.credentialName" class="form-control" id="credentialName" placeholder="CredenitialName">
-              </div>
-              <div class="form-group">
-                <label for="memberName">Member Name</label>
-                <input type="text" v-model="newcredentialForm.memberName" class="form-control" id="memberName" placeholder="Member Name">
-              </div>
-              <div class="form-group">
-                <label for="expiration">Expiration</label>
-                <input type="text" v-model="newcredentialForm.expiration" class="form-control" id="expiration" placeholder="Member Name">
-              </div>
-              <button type="submit" class="btn btn-primary">Add Certification</button>
-              </form>
-    </div>
+  <div class="row"  id="phppage">
+      <div id="cardPaneLeft" class="col-sm-3 cardPane cardPaneRight">
+        <form method="post" v-on:submit.prevent="handleNewCredentialForm">
+          <h3> <u>Add Certification</u> </h3>
+        <div class="form-group">
+          <label for="credentialName">CredentialAgency</label>
+          <input type="text" v-model="newcredentialForm.Agency" class="form-control" id="credentialName" placeholder="CredenitialName">
+        </div>
+        <div class="form-group">
+          <label for="memberName">CredentialName</label>
+          <input type="text" v-model="newcredentialForm.Name" class="form-control" id="memberName" placeholder="Member Name">
+        </div>
+        <div class="form-group">
+          <label for="expiration">Expiration</label>
+          <input type="text" v-model="newcredentialForm.ExpirationPeriod" class="form-control" id="expiration" placeholder="Member Name">
+        </div>
+        <button type="submit" class="btn btn-primary">Add Certification</button>
+        </form>
+      </div>
     <div class="col-xl-auto" id="middle">
       <br>
+      <div class="row">
       <table class ="table">
           <thead class = "thead-dark" >
           <tr>
           <th scope="col">ID</th>
-          <th scope="col">CredentialName</th>
-          <th scope="col">MemberName</th>
+          <th scope="col">Agency</th>
+          <th scope="col">Cert. Name</th>
           <th scope="col">Cert. Expiration</th>
         </tr>
         </thead>
-          <tbody>
-          <tr role="row">
-            <th scope="row" role="rowheader">1</th>
-              <td role="gridcell">CPR (American Heart Association)</td>
-              <td role="gridcell">Harris, John</td>
-              <td role="gridcell">10/7/2020</td>
-          </tr>
-          <tr role="row">
-            <th scope="row" role="rowheader">2</th>
-              <td role="gridcell">Firefighter I (Athens Technical College)</td>
-              <td role="gridcell">Reign, Carla</td>
-              <td role="gridcell">02/15/2019</td>
-          </tr>
-          <tr role="row">
-            <th scope="row" role="rowheader">3</th>
-              <td role="gridcell">POST (Georgia POST Academy)</td>
-              <td role="gridcell">Nicks, Stevie</td>
-              <td role="gridcell">05/21/2020</td>
-          </tr>
-          <tr role="row">
-            <th scope="row" role="rowheader">4</th>
-              <td role="gridcell">CPR (American Red Cross)</td>
-              <td role="gridcell">Greenburg, Gerald</td>
-              <td role="gridcell">07/11/2022</td>
-          </tr>
-          <tr role="row">
-            <th scope="row" role="rowheader">5</th>
-              <td role="gridcell">Firefighter I (IVY Technical College)</td>
-              <td role="gridcell">Hernandez, Pacho</td>
-              <td role="gridcell">11/01/2023</td>
-          </tr>
-        </div>
-        </table>
+        <tbody>
+          <tr v-for="cl in certificationList">
+            <th scope="row" role="rowheader">{{ cl.CertificationID }}</th>
+              <td role="gridcell">{{ cl.Agency }}</td>
+              <td role="gridcell">{{ cl.Name }}</td>
+              <td role="gridcell">{{ cl.ExpirationPeriod }}</td>
+            </table>
         <form>
         <button type="submit" class="btn btn-secondary">Edit Member</button>
-      </form>
+        </form>
+      </div>
     </div>
     <div class="col-sm" id="out">
           <form>
           <div class="form-group">
             <label for="newmemberName"><u>Update Credentials</u></label>
             <select class="form-control" v-model="newmemberForm.Name" id="newmemberName">
-              <option value="name1">CPR (American Heart Association)</option>
-              <option value="name2">Firefighter I (Athens Technical College)</option>
-              <option value="name3">POST (Georgia POST Academy)</option>
-              <option value="name4">CPR (American Red Cross)</option>
-              <option value="name5">Firefighter I (IVY Technical College)</option>
+              <option value='newmemberName' v-for="cl in certificationList">{{ cl.Name }}</option>
             </select>
           </div>
           <button type="submit" class="btn btn-secondary">Update Certification</button>
           </form>
+          </div>
+    </div>
+  </div>
+        
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/app.js"></script> 
   </body>
 </html>

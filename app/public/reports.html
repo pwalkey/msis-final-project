@@ -44,7 +44,7 @@
   <h1 class="open">OCFR Reports</h1>
   <br>
   <div class="container">
-    <div class="row">
+    <div class="row" id="phppage">
       <div class="col">
         <h4> Expired Certifications</h4>
       <table class="table">
@@ -96,55 +96,23 @@
             <th scope="col">Email</th>
           </tr>
           </thead>
-            <tbody>
-            <tr role="row">
-              <th scope="row" role="rowheader">1</th>
-                <td role="gridcell">Harris</td>
-                <td role="gridcell">John</td>
-                <td role="gridcell">12</td>
-                <td role="gridcell">3</td>
-                <td role="gridcell">harris.john@yahoo.com</td>
-            </tr>
-            <tr role="row">
-              <th scope="row" role="rowheader">2</th>
-                <td role="gridcell">Reign</td>
-                <td role="gridcell">Carla</td>
-                <td role="gridcell">11</td>
-                <td role="gridcell">2</td>
-                <td role="gridcell">recarl@gmail.com</td>
-            </tr>
-            <tr role="row">
-              <th scope="row" role="rowheader">3</th>
-                <td role="gridcell">Nicks</td>
-                <td role="gridcell">Stevie</td>
-                <td role="gridcell">5</td>
-                <td role="gridcell">4</td>
-                <td role="gridcell">nickss@aol.com</td>
-            </tr>
-            <tr role="row">
-              <th scope="row" role="rowheader">4</th>
-                <td role="gridcell">Greenburg</td>
-                <td role="gridcell">Gerald</td>
-                <td role="gridcell">2</td>
-                <td role="gridcell">5</td>
-                <td role="gridcell">greenger@outlook.com</td>
-            </tr>
-            <tr role="row">
-              <th scope="row" role="rowheader">5</th>
-                <td role="gridcell">Hernandez</td>
-                <td role="gridcell">Pacho</td>
-                <td role="gridcell">9</td>
-                <td role="gridcell">1</td>
-                <td role="gridcell">pachofire@cox.net</td>
-            </tr>
-          </div>
-          </table>
+          <tr v-for="ps in personList">
+            <th scope="row" role="rowheader">{{ ps.PersonID }}</th>
+              <td role="gridcell">{{ ps.LastName }}</td>
+              <td role="gridcell">{{ ps.FirstName }}</td>
+              <td role="gridcell">{{ ps.RadioNumber }}</td>
+              <td role="gridcell">{{ ps.StationNumber }}</td>
+              <td role="gridcell">{{ ps.Email }}</td>
+            </table>
           <button type="submit" class="btn btn-primary">Export as .csv</button>
       </div>
+    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/app.js"></script>  
   </body>
 </html>
