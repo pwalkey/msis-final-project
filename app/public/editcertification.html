@@ -44,8 +44,10 @@
   <div class="open">
   <h1>Edit Member</h1>
   </div>
-  <div class="container">
-
+  <div class="container" id="phppage">
+    <select name="Certification" onselect="this.activeCertification=ct">
+      <option v-for="ct in certificationList" v-bind:value="ct.CertificationID">{{ct.CertificationID}}: {{ct.Name}}</option>
+    </select>
     <form>
       <div class="form-group col-sm">
 

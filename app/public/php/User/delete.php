@@ -10,11 +10,11 @@ $db = DbConnection::getConnection();
 
 
 $stmt = $db->prepare(
-  $sql = 'DELETE FROM PERSON WHERE PersonID=?';
+  $sql = 'DELETE FROM USER WHERE UserID=?';
 );
 
 $stmt->execute(
-  $_POST['PersonID'],
+  $_POST['UserID'],
 );
 
 // If needed, get auto-generated PK from DB
@@ -24,4 +24,4 @@ $stmt->execute(
 // Here, instead of giving output, I'm redirecting to the SELECT API,
 // just in case the data changed by entering it
 header('HTTP/1.1 303 See Other');
-header('Location: ../Person/');
+header('Location: ../User/');

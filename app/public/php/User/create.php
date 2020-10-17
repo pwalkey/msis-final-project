@@ -7,15 +7,15 @@ $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
 // Note the use of parameterized statements to avoid injection
-
-
 $stmt = $db->prepare(
-  $sql = 'DELETE FROM PERSON WHERE PersonID=?';
+  'INSERT INTO USER (Email, Password)
+  VALUES (?, ?)'
 );
 
-$stmt->execute(
-  $_POST['PersonID'],
-);
+$stmt->execute([
+  $_POST['Email'],
+  $_POST['Password'],
+]);
 
 // If needed, get auto-generated PK from DB
 // $pk = $db->lastInsertId();  // https://www.php.net/manual/en/pdo.lastinsertid.php

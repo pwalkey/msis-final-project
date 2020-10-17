@@ -45,22 +45,11 @@
 </div>
   <div class="container">
   <div class="row" id="phppage">
-    <div class="col-sm-3" >
-      <h3>  Remove Member </h3>
-      <form>
-      <div class="form-group">
-        <label for="newmemberName">Member Name</label>
-        <select class="form-control" v-model="newmemberForm.Name" id="newmemberName">
-          <option value='newmemberName' v-for="ps in personList">{{ ps.LastName }}, {{ ps.FirstName }}</option>
-        </select>
-      </div>
-      <button type="submit" class="btn btn-secondary"><b>Remove Member</b></button>
-      </form>
-    </div>
+
     <div class="col-xl-" id="middle">
       <br>        
       <div class="row">
-      <table class="table">
+      <table class="table" id="highlighttable">
           <thead class = "thead-dark" >
           <tr>
           <th scope="col">ID</th>
@@ -72,17 +61,20 @@
         </tr>
         </thead>
           <tbody>
-          <tr v-for="ps in personList">
-            <th scope="row" role="rowheader">{{ ps.PersonID }}</th>
-              <td role="gridcell">{{ ps.LastName }}</td>
-              <td role="gridcell">{{ ps.FirstName }}</td>
-              <td role="gridcell">{{ ps.RadioNumber }}</td>
-              <td role="gridcell">{{ ps.StationNumber }}</td>
-              <td role="gridcell">{{ ps.Position }}</td>
+          <tr v-for="mb in memberList" v-on:click="activeMember = mb">
+            <th scope="row" role="rowheader">{{ mb.PersonID }}</th>
+              <td role="gridcell">{{ mb.LastName }}</td>
+              <td role="gridcell">{{ mb.FirstName }}</td>
+              <td role="gridcell">{{ mb.RadioNumber }}</td>
+              <td role="gridcell">{{ mb.StationNumber }}</td>
+              <td role="gridcell">{{ mb.Position }}</td>
             </table>
-            <form>
+            <form action="editmember.html">
               <button type="submit" class="btn btn-secondary"><b>Edit Member</b></button>
-            </form></div></div>
+            </form>
+            <form><button type="submit" class="btn btn-secondary"><b>Remove Member</b></button></form>
+          </div>
+        </div>
             <div class="container-fluid col-sm" id="out">
            <form method="post" v-on:submit.prevent="createMember">
             <h3>  Add Member </h3>
@@ -113,6 +105,7 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="js/app.js"></script>  
+    <script src="js/app.js"></script>
+    <script src="js/highlightTable.js"></script>    
   </body>
 </html>

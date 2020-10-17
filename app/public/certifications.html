@@ -41,71 +41,66 @@
 </nav>
   <div class="open">
   <h1>OCFR Certifications Page</h1>
-  </div>
+</div>
   <div class="container">
-  <div class="row"  id="phppage">
-      <div id="cardPaneLeft" class="col-sm-3 cardPane cardPaneRight">
-        <form method="post" v-on:submit.prevent="createCredential">
-          <h3> <u>Add Certification</u> </h3>
-        <div class="form-group">
-          <label for="credentialName">CredentialAgency</label>
-          <input type="text" v-model="newcredentialForm.Agency" class="form-control" id="credentialName" placeholder="CredenitialName">
-        </div>
-        <div class="form-group">
-          <label for="memberName">CredentialName</label>
-          <input type="text" v-model="newcredentialForm.Name" class="form-control" id="memberName" placeholder="Member Name">
-        </div>
-        <div class="form-group">
-          <label for="expiration">Expiration</label>
-          <input type="text" v-model="newcredentialForm.ExpirationPeriod" class="form-control" id="expiration" placeholder="Member Name">
-        </div>
-        <button type="submit" class="btn btn-primary">Add Certification</button>
-        </form>
-      </div>
-    <div class="col-xl-auto" id="middle">
-      <br>
+  <div class="row" id="phppage">
+
+    <div class="col-xl-" id="middle">
+      <br>        
       <div class="row">
-      <table class ="table">
+      <table class="table" id="highlighttable">
           <thead class = "thead-dark" >
           <tr>
           <th scope="col">ID</th>
           <th scope="col">Agency</th>
-          <th scope="col">Cert. Name</th>
-          <th scope="col">Cert. Expiration</th>
+          <th scope="col">Name</th>
+          <th scope="col">Expiration Period</th>
         </tr>
         </thead>
-        <tbody>
-          <tr v-for="cl in certificationList">
-            <th scope="row" role="rowheader">{{ cl.CertificationID }}</th>
-              <td role="gridcell">{{ cl.Agency }}</td>
-              <td role="gridcell">{{ cl.Name }}</td>
-              <td role="gridcell">{{ cl.ExpirationPeriod }}</td>
+          <tbody>
+          <tr v-for="ct in certificationList" v-on:click="this.activeCertification = ct">
+            <th scope="row" role="rowheader">{{ ct.CertificationID }}</th>
+              <td role="gridcell">{{ ct.Agency }}</td>
+              <td role="gridcell">{{ ct.Name }}</td>
+              <td role="gridcell">{{ ct.ExpirationPeriod }}</td>
             </table>
-        <form>
-        <button type="submit" class="btn btn-secondary">Edit Member</button>
-        </form>
-      </div>
-    </div>
-    <div class="col-sm" id="out">
-          <form>
+            <form action="editcertification.html">
+              <button type="submit" class="btn btn-secondary"><b>Edit Certification</b></button>
+            </form>
+            <form><button type="submit" class="btn btn-secondary"><b>Remove Certification</b></button></form>
+          </div>
+        </div>
+            <div class="container-fluid col-sm" id="out">
+           <form method="post" v-on:submit.prevent="createCredential">
+            <h3>  Add Credential </h3>
+            
+            <div class="form-group">
+            <label for="newcredentialAgency">Agency</label>
+            <input type="text" v-model="newcredentialForm.FirstName" class="form-control" id="newcredentialAgency">
+          </div>
           <div class="form-group">
-            <label for="newmemberName"><u>Update Credentials</u></label>
-            <select class="form-control" v-model="newmemberForm.Name" id="newmemberName">
-              <option value='newmemberName' v-for="cl in certificationList">{{ cl.Name }}</option>
-            </select>
+            <label for="newcredentialName">Name</label>
+            <input type="text" v-model="newcredentialForm.LastName" class="form-control" id="newcredentialName">
           </div>
-          <button type="submit" class="btn btn-secondary">Update Certification</button>
+          <div class="form-group">
+            <label for="newcredentialPeriod">Expiration Period</label>
+            <input type="text" v-model="newcredentialForm.Position" class="form-control" id="newcredentialPeriod" placeholder="Number of Years (i.e. 5))">
+          </div>
+          <button type="submit" class="btn btn-primary"><b>Add Certification</b></button>
           </form>
-          </div>
+        </div>
+        </div>
+      
     </div>
-  </div>
-        
+
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="js/app.js"></script> 
+    <script src="js/app.js"></script>
+    <script src="js/highlightTable.js"></script>    
   </body>
 </html>
