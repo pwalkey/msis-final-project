@@ -22,3 +22,9 @@ table {
 .highlight {
   background-color: #ddd;
 }
+.nav-link {
+  color: white;
+}
+nav .navbar-nav li a{
+  color: white !important;
+  }
