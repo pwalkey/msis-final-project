@@ -43,10 +43,11 @@
   <div class="open">
   <h1>OCFR Members Page</h1>
 </div>
+<br>
   <div class="container">
   <div class="row" id="phppage">
-
     <div class="col">
+      <h3>Members</h3>
       <br>
       <div class="row">
       <table class="table" id="highlighttable">
@@ -78,7 +79,7 @@
             <div class="col">
            <form method="post" v-on:submit.prevent="createMember">
             <h3>  Add Member </h3>
-
+            <br>
             <div class="form-group">
             <label for="newmemberFirstName">First Name</label>
             <input type="text" v-model="newmemberForm.FirstName" class="form-control" id="newmemberFirstName" placeholder="Jane">
