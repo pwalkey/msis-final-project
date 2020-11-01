@@ -46,9 +46,9 @@
   <div class="container">
   <div class="row" id="phppage">
 
-    <div class="col-xl-" id="middle">
+    <div class="col">
       <h3> Active Users </h3>
-      <br>        
+      <br>
       <div class="row">
       <table class="table" id="highlighttable">
           <thead class = "thead-dark" >
@@ -70,10 +70,10 @@
             <form><button type="submit" class="btn btn-secondary"><b>Remove Member</b></button></form>
           </div>
         </div>
-            <div class="container-fluid col-sm" id="out">
+            <div class="col">
            <form method="post" v-on:submit.prevent="createMember">
             <h3>  Add Member </h3>
-            
+
             <div class="form-group">
             <label for="newuserEmail">Email</label>
             <input type="text" v-model="newuserForm.Email" class="form-control" id="newmemberFirstName">
@@ -86,7 +86,7 @@
           </form>
         </div>
         </div>
-      
+
     </div>
 
 
@@ -97,6 +97,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="js/app.js"></script>
-    <script src="js/highlightTable.js"></script>    
+    <script src="js/highlightTable.js"></script>
   </body>
 </html>
