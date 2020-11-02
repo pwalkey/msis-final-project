@@ -60,33 +60,33 @@
         </tr>
         </thead>
           <tbody>
-          <tr v-for="ct in certificationList" v-on:click="this.activeCertification = ct">
+          <tr v-for="ct in certificationList" v-on:click="activeCertification = ct; storeItem();">
             <th scope="row" role="rowheader">{{ ct.CertificationID }}</th>
               <td role="gridcell">{{ ct.Agency }}</td>
               <td role="gridcell">{{ ct.Name }}</td>
               <td role="gridcell">{{ ct.ExpirationPeriod }}</td>
             </table>
             <form action="editcertification.html">
-              <button type="submit" class="btn btn-secondary"><b>Edit Certification</b></button>
+              <button type="submit" :disabled="Object.keys(activeCertification).length === 0" class="btn btn-secondary"><b>Edit Certification</b></button>
             </form>
-            <form><button type="submit" class="btn btn-secondary"><b>Remove Certification</b></button></form>
+            <form v-on:submit.prevent="deleteCredential()"><button type="submit" :disabled="Object.keys(activeCertification).length === 0" class="btn btn-secondary"><b>Remove Certification</b></button></form>
           </div>
         </div>
             <div class="col">
            <form method="post" v-on:submit.prevent="createCredential">
-            <h3>  Add Certifications </h3>
+            <h3>Add Certification</h3>
             <br>
             <div class="form-group">
             <label for="newcredentialAgency">Agency</label>
-            <input type="text" v-model="newcredentialForm.FirstName" class="form-control" id="newcredentialAgency" placeholder="Specify Certifying Agency">
+            <input type="text" v-model="newcredentialForm.Agency" class="form-control" id="newcredentialAgency" placeholder="Specify Certifying Agency">
           </div>
           <div class="form-group">
             <label for="newcredentialName">Name</label>
-            <input type="text" v-model="newcredentialForm.LastName" class="form-control" id="newcredentialName" placeholder="First & Last Name">
+            <input type="text" v-model="newcredentialForm.Name" class="form-control" id="newcredentialName" placeholder="First & Last Name">
           </div>
           <div class="form-group">
             <label for="newcredentialPeriod">Expiration Period</label>
-            <input type="text" v-model="newcredentialForm.Position" class="form-control" id="newcredentialPeriod" placeholder="Number of Years (i.e. 5)">
+            <input type="text" v-model="newcredentialForm.ExpirationPeriod" class="form-control" id="newcredentialPeriod" placeholder="Number of Years (i.e. 5)">
           </div>
           <button type="submit" class="btn btn-primary"><b>Add Certification</b></button>
           </form>
