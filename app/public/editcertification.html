@@ -42,30 +42,27 @@
 
 </nav>
   <div class="open">
-  <h1>Edit Member</h1>
+  <h1>Edit Certification</h1>
   </div>
   <div class="container" id="phppage">
-    <select name="Certification" onselect="this.activeCertification=ct">
-      <option v-for="ct in certificationList" v-bind:value="ct.CertificationID">{{ct.CertificationID}}: {{ct.Name}}</option>
-    </select>
-    <form>
+    <form action="certifications.html" v-on:submit="updateCredential()">
       <div class="form-group col-sm">
 
         <label for="certificationID">Certification ID</label>
-        <input type="email" class="form-control" id="certificationID">
+        <input type="email" disabled class="form-control" id="certificationID" v-bind:value="activeCertification.CertificationID">
 
         <label for="agency">Agency</label>
-        <input type="email" class="form-control" id="agency">
+        <input type="text" class="form-control" id="agency" v-model="activeCertification.Agency">
 
         <label for="name">Certification Name</label>
-        <input type="email" class="form-control" id="name">
+        <input type="text" class="form-control" id="name" v-model="activeCertification.Name">
 
         <label for="period">Expiration Period</label>
-        <input type="email" class="form-control" id="period">
+        <input type="number" class="form-control" id="period" v-model="activeCertification.ExpirationPeriod">
 
 
         <br>
-        <button type="submit" class="btn btn-primary">Update Member</button>
+        <button type="submit" class="btn btn-primary">Update Certification</button>
       </div>
       
     </form>
@@ -81,6 +78,6 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="js/app.js"></script> 
+    <script src="js/editapp.js"></script> 
   </body>
 </html>
