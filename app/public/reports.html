@@ -47,7 +47,7 @@
     <div class="row" id="phppage">
       <div class="col">
         <h4> Expired Certifications</h4>
-      <table class="table">
+      <table class="table" id="ExpCert">
   <thead class="thead-dark">
     <tr>
       <th scope="col">#</th>
@@ -81,11 +81,11 @@
     </tr>
   </tbody>
 </table>
-<button type="submit" class="btn btn-primary">Export as .csv</button>
+<button onclick="exportTableToCSV('ExpCert')" type="submit" class="btn btn-primary">Export as .csv</button>
 </div>
       <div class="col">
         <h4>Member Information</h4>
-        <table class = "table">
+        <table class = "table" id="MemberInfo">
             <thead class="thead-dark">
             <tr>
             <th scope="col">ID</th>
@@ -104,7 +104,7 @@
               <td role="gridcell">{{ ps.StationNumber }}</td>
               <td role="gridcell">{{ ps.Email }}</td>
             </table>
-          <button type="submit" class="btn btn-primary">Export as .csv</button>
+          <button onclick="exportTableToCSV('MemberInfo')" type="submit" class="btn btn-primary">Export as .csv</button>
       </div>
     </div>
     <!-- Optional JavaScript -->
@@ -114,5 +114,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="js/app.js"></script>  
+    <script src="js/exportcsv.js"></script> 
   </body>
 </html>
