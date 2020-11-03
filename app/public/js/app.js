@@ -173,29 +173,6 @@ var app = new Vue({
 		console.log(this.newcredentialForm);
 	   },
 
-	getCredential() {
-		// evt.preventDefault();  // Redundant w/ Vue's submit.prevent
-  
-		// TODO: Validate the data!
-  
-		fetch('php/EditCertification/', {
-		  method:'POST',
-		  body: JSON.stringify(this.activeCertification),
-		  headers: {
-			"Content-Type": "application/json; charset=utf-8"
-		  }
-		})
-		.then( response => response.json() )
-		.then( json => {
-		  console.log("Returned from post:", json);
-		  this.certificationList = json;
-		  this.newcredentialForm = this.newcredentialData();
-		});
-  
-		console.log("Creating (POSTing)...!");
-		console.log(this.newcredentialForm);
-	  },
-
 	  deleteCredential(evt){
 		// evt.preventDefault();  // Redundant w/ Vue's submit.prevent
   
@@ -240,6 +217,15 @@ var app = new Vue({
 		.then( json => {
 			this.userList = json;
 			console.log(this.userList)
+		});
+	},
+
+	getExpiredCertifications(){
+		fetch("php/Reports/")
+		.then(response => response.json())
+		.then( json => {
+			this.expiredCertificationList = json;
+			console.log(this.expiredCertificationList)
 		});
 	},
 
@@ -367,6 +353,7 @@ var app = new Vue({
 		this.getCertifications();
 		this.getUsers();
 		this.getMembers();
+		this.getExpiredCertifications();
 	}
 	})
 
