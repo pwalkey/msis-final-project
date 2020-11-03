@@ -60,20 +60,21 @@
         </tr>
         </thead>
           <tbody>
-          <tr v-for="usr in userList" v-on:click="activeUser = usr; echo(activeUser)">
+          <tr v-for="usr in userList" v-on:click="activeUser = usr; printMember(); storeItem();">
             <th scope="row" role="rowheader">{{ usr.UserID }}</th>
               <td role="gridcell">{{ usr.Email }}</td>
               <td role="gridcell">{{ usr.Password }}</td>
             </table>
-            <form action="editmember.html">
-              <button type="submit" class="btn btn-secondary"><b>Edit Member</b></button>
+            <form action="edituser.html">
+              <button type="submit" :disabled="Object.keys(activeUser).length === 0" class="btn btn-secondary"><b>Edit User</b></button>
             </form>
-            <form><button type="submit" class="btn btn-secondary"><b>Remove Member</b></button></form>
+            <form v-on:submit.prevent="deleteUser"><button type="submit" :disabled="Object.keys(activeUser).length === 0" class="btn btn-secondary"><b>Remove User</b></button>
+            </form>
           </div>
         </div>
             <div class="col">
-           <form method="post" v-on:submit.prevent="createMember">
-            <h3>  Add Member </h3>
+           <form method="post" v-on:submit.prevent="createUser">
+            <h3>  Add User </h3>
             <br>
             <div class="form-group">
             <label for="newuserEmail">Email</label>

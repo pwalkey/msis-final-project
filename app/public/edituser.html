@@ -42,23 +42,21 @@
 
 </nav>
   <div class="open">
-  <h1>Edit Member</h1>
+  <h1>Edit User</h1>
   </div>
-  <div class="container">
+  <div class="container" id="phppage">
 
-    <form>
+    <form action="users.html" v-on:submit="updateUser()">
       <div class="form-group col-sm">
 
         <label for="userID">User ID</label>
-        <input type="email" class="form-control" id="userID">
+        <input type="text"  disabled class="form-control" id="userID" v-bind:value="activeUser.UserID">
 
         <label for="email">Email</label>
-        <input type="email" class="form-control" id="email">
+        <input type="text" class="form-control" id="email" v-model="activeUser.Email">
 
         <label for="password">Password</label>
-        <input type="email" class="form-control" id="password">
-
-
+        <input type="text" class="form-control" id="password" v-model="activeUser.Password">
 
 
         <br>
@@ -78,6 +76,6 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="js/app.js"></script> 
+    <script src="js/editapp.js"></script> 
   </body>
 </html>
