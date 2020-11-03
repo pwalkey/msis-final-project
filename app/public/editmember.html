@@ -46,9 +46,9 @@
   </div>
   <div class="container" id="phppage">
 
-    <form action="members.html" v-on:submit="updateMember()">
+      <div class="row">
       <div class="form-group col-sm">
-
+      <form action="members.html" v-on:submit="updateMember()">
         <label for="memberID">Member ID</label>
         <input type="text" disabled class="form-control" id="memberID" v-bind:value="activeMember.PersonID">
 
@@ -101,10 +101,31 @@
         <input type="text" class="form-control" id="position" v-model="activeMember.Position" onload="testfunc()">
         <br>
         <button type="submit" class="btn btn-primary">Update Member</button>
-
+</form>
       </div>
-      
-    </form>
+
+      <div class="col-sm">
+        
+          <div class="form-group">
+            <h3>Add Credential to Member</h3>
+            <form action="members.html" v-on:submit.prevent="createPersonCredential()">
+              
+                <label for="memberID">Member ID</label>
+                <input type="text" disabled class="form-control" id="memberID" v-bind:value="activeMember.PersonID">
+                <label for="position">Agency/Credential Name</label>
+            <select v-model="newPersonCredentialForm.CertificationID">
+              <option v-for="ct in certificationList" v-bind:value="ct.CertificationID">{{ct.Agency}} {{ct.Name}}</option>
+            </select>
+            <br>
+             <label for="dob">Date Acquired</label>
+            <input type="date" class="form-control" id="dob" v-model="newPersonCredentialForm.DateAcquired">
+            <br>
+            <button type="submit" class="btn btn-primary">Add Member Credential</button>
+          </form>
+          </div>
+      </div>
+    </div>
+    
   </div>
   </div>
   </div>

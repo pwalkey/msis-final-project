@@ -53,31 +53,17 @@
       <th scope="col">#</th>
       <th scope="col">Name</th>
       <th scope="col">Cerification</th>
-      <th scope="col">Exp. Date</th>
-      <th scope="col">Priority</th>
+      <th scope="col">Date Acquired</th>
+      <th scope="col">Expiration Period (Years)</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Harris, John</td>
-      <td>CPR (American Heart Association)</td>
-      <td>10/7/2020</td>
-      <td>Low</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Nicks, Stevie</td>
-      <td>POST (Georgia POST Academy)</td>
-      <td>05/21/2020</td>
-      <td>Medium</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Reign, Carla</td>
-      <td>Firefighter I (Athens Technical College)</td>
-      <td>02/15/2019</td>
-      <td>High</td>
+    <tr v-for="ct in expiredCertificationList">
+      <th scope="row">{{ct.CertificationID}}</th>
+      <td>{{ct.LastName}}, {{ct.FirstName}}</td>
+      <td>{{ct.AgencyName}} ({{ct.Name}})</td>
+      <td>{{ct.DateAcquired}}</td>
+      <td>{{ct.ExpirationPeriod}}</td>
     </tr>
   </tbody>
 </table>
