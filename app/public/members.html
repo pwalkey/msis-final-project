@@ -62,7 +62,7 @@
         </tr>
         </thead>
           <tbody>
-          <tr v-for="mb in memberList" v-on:click="activeMember = mb">
+          <tr v-for="mb in memberList" v-on:click="activeMember = mb; storeItem()">
             <th scope="row" role="rowheader">{{ mb.PersonID }}</th>
               <td role="gridcell">{{ mb.LastName }}</td>
               <td role="gridcell">{{ mb.FirstName }}</td>
@@ -71,9 +71,9 @@
               <td role="gridcell">{{ mb.Position }}</td>
             </table>
             <form action="editmember.html">
-              <button type="submit" class="btn btn-secondary"><b>Edit Member</b></button>
+              <button type="submit" :disabled="Object.keys(activeMember).length === 0" class="btn btn-secondary"><b>Edit Member</b></button>
             </form>
-            <form><button type="submit" class="btn btn-secondary"><b>Remove Member</b></button></form>
+            <form v-on:submit.prevent="deleteMember()"><button type="submit" :disabled="Object.keys(activeMember).length === 0" class="btn btn-secondary"><b>Remove Member</b></button></form>
           </div>
         </div>
             <div class="col">
@@ -96,7 +96,7 @@
           </form>
         </div>
         </div>
-
+        <span onload="resetData()"></span>
     </div>
 
 

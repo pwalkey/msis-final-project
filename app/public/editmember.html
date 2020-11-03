@@ -41,74 +41,73 @@
   </div>
 
 </nav>
-  <div class="open">
+  <div class="open" >
   <h1>Edit Member</h1>
   </div>
-  <div class="container">
+  <div class="container" id="phppage">
 
-    <form>
+    <form action="members.html" v-on:submit="updateMember()">
       <div class="form-group col-sm">
 
         <label for="memberID">Member ID</label>
-        <input type="email" class="form-control" id="memberID">
+        <input type="text" disabled class="form-control" id="memberID" v-bind:value="activeMember.PersonID">
 
         <label for="firstName">First Name</label>
-        <input type="email" class="form-control" id="firstName">
+        <input type="text" class="form-control" id="firstName" v-model="activeMember.FirstName">
 
         <label for="lastName">Last Name</label>
-        <input type="email" class="form-control" id="lastName">
+        <input type="text" class="form-control" id="lastName" v-model="activeMember.LastName">
 
         <label for="email">Email</label>
-        <input type="email" class="form-control" id="email">
+        <input type="email" class="form-control" id="email" v-model="activeMember.Email">
 
         <label for="dob">Date of Birth</label>
-        <input type="email" class="form-control" id="dob">
+        <input type="date" class="form-control" id="dob" v-model="activeMember.DateOfBirth">
 
         <label for="gender">Gender</label>
-        <input type="email" class="form-control" id="gender">
+        <input type="text" class="form-control" id="gender" v-model="activeMember.Gender">
 
         <label for="street">Street</label>
-        <input type="email" class="form-control" id="street">
+        <input type="text" class="form-control" id="street" v-model="activeMember.Street">
 
         <label for="zip">Zip</label>
-        <input type="email" class="form-control" id="zip">
+        <input type="text" class="form-control" id="zip" v-model="activeMember.Zip">
 
         <label for="city">City</label>
-        <input type="email" class="form-control" id="city">
+        <input type="text" class="form-control" id="city" v-model="activeMember.City">
 
         <label for="state">State</label>
-        <input type="email" class="form-control" id="state">
+        <input type="text" class="form-control" id="state" v-model="activeMember.State">
 
         <label for="primphone">Primary Phone</label>
-        <input type="email" class="form-control" id="primphone">
+        <input type="text" class="form-control" id="primphone" v-model="activeMember.PrimaryPhone">
 
         <label for="secphone">Secondary Phone</label>
-        <input type="email" class="form-control" id="secphone">
+        <input type="text" class="form-control" id="secphone" v-model="activeMember.SecondaryPhone">
 
         <label for="terphone">Tertiary Phone</label>
-        <input type="email" class="form-control" id="terphone">
+        <input type="text" class="form-control" id="terphone" v-model="activeMember.TertiaryPhone">
 
         <label for="startdate">Start Date</label>
-        <input type="email" class="form-control" id="startdate">
+        <input type="date" class="form-control" id="startdate" v-model="activeMember.StartDate">
 
         <label for="radionumber">Radio Number</label>
-        <input type="email" class="form-control" id="radionumber">
+        <input type="text" class="form-control" id="radionumber" v-model="activeMember.RadioNumber">
 
         <label for="stationnumber">Station Number</label>
-        <input type="email" class="form-control" id="stationnumber">
+        <input type="text" class="form-control" id="stationnumber" v-model="activeMember.StationNumber">
 
         <label for="position">Position</label>
-        <input type="email" class="form-control" id="position">
+        <input type="text" class="form-control" id="position" v-model="activeMember.Position" onload="testfunc()">
         <br>
         <button type="submit" class="btn btn-primary">Update Member</button>
+
       </div>
       
     </form>
-
   </div>
   </div>
   </div>
-
         
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -116,6 +115,6 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="js/app.js"></script> 
+    <script src="js/editapp.js"></script> 
   </body>
 </html>
