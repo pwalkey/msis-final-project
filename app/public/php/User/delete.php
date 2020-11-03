@@ -10,12 +10,12 @@ $db = DbConnection::getConnection();
 
 
 $stmt = $db->prepare(
-  $sql = 'DELETE FROM USER WHERE UserID=?';
+  $sql = 'DELETE FROM USER WHERE UserID=?'
 );
 
-$stmt->execute(
+$stmt->execute([
   $_POST['UserID'],
-);
+]);
 
 // If needed, get auto-generated PK from DB
 // $pk = $db->lastInsertId();  // https://www.php.net/manual/en/pdo.lastinsertid.php
